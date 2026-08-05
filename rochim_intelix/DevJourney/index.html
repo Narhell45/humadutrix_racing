@@ -5,172 +5,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevJourney</title>
 
+    <!-- Remix Icon -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">DevJourney</h1>
+<div class="dashboard">
+
+    <!-- ======================
+            SIDEBAR
+    ======================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="ri-compass-discover-line"></i>
+
+            <h2>DevJourney</h2>
+
         </div>
-    </header>
 
-    <!-- Main -->
-    <main class="container">
+        <nav>
 
-        <!-- Greeting -->
-        <section class="greeting card">
+            <ul>
 
-            <h2>👋 Selamat Datang, Khim</h2>
+                <li class="active">
+                    <a href="#">
+                        <i class="ri-home-5-line"></i>
+                        Dashboard
+                    </a>
+                </li>
 
-            <div class="streak">
-                <span>🔥 Streak</span>
-                <strong>7 Hari</strong>
-            </div>
+                <li>
+                    <a href="#">
+                        <i class="ri-line-chart-line"></i>
+                        Progress
+                    </a>
+                </li>
 
-            <p class="quote">
-                "One Commit is Better Than Zero Commit."
+                <li>
+                    <a href="#">
+                        <i class="ri-checkbox-line"></i>
+                        Checklist
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="ri-briefcase-line"></i>
+                        PKL Tasks
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="ri-sticky-note-line"></i>
+                        Catatan
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="ri-bar-chart-box-line"></i>
+                        Statistik
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="ri-settings-3-line"></i>
+                        Pengaturan
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <p>
+
+                <i class="ri-double-quotes-l"></i>
+
+                <br>
+
+                One Commit is Better Than Zero Commit.
+
             </p>
 
-        </section>
+            <i class="ri-code-s-slash-line code-icon"></i>
 
-        <!-- Progress -->
-        <section class="progress card">
+        </div>
 
-            <div class="section-title">
-                <h2>Progress Belajar</h2>
-                <span id="progressText">75%</span>
-            </div>
+    </aside>
 
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
 
-        </section>
+    <!-- ======================
+        MAIN
+    ======================= -->
 
-        <!-- Checklist -->
-        <section class="checklist card">
+    <main class="main-content">
 
-            <div class="section-title">
-                <h2>Checklist Belajar</h2>
+        <header class="topbar">
 
-                <button id="addChecklistBtn">
-                    + Tambah
-                </button>
-            </div>
+            <button class="theme-btn">
 
-            <ul id="checklistList">
+                <i class="ri-moon-line"></i>
 
-                <li>
+                Dark Mode
 
-                    <label>
+            </button>
 
-                        <input type="checkbox">
+        </header>
 
-                        Belajar HTML
 
-                    </label>
+        <!-- Greeting -->
 
-                    <div class="action">
-
-                        <button>Edit</button>
-
-                        <button>Hapus</button>
-
-                    </div>
-
-                </li>
-
-                <li>
-
-                    <label>
-
-                        <input type="checkbox" checked>
-
-                        Belajar CSS
-
-                    </label>
-
-                    <div class="action">
-
-                        <button>Edit</button>
-
-                        <button>Hapus</button>
-
-                    </div>
-
-                </li>
-
-            </ul>
+        <section class="card greeting-card">
 
         </section>
 
-        <!-- PKL -->
-        <section class="internship card">
 
-            <div class="section-title">
+        <!-- Statistics -->
 
-                <h2>Task PKL</h2>
+        <section class="stats">
 
-                <button id="addTaskBtn">
+            <div class="card"></div>
 
-                    + Tambah
+            <div class="card"></div>
 
-                </button>
+            <div class="card"></div>
 
-            </div>
-
-            <ul id="taskList">
-
-                <li>
-
-                    <label>
-
-                        <input type="checkbox">
-
-                        Landing Page Intelix
-
-                    </label>
-
-                    <div class="action">
-
-                        <button>Edit</button>
-
-                        <button>Hapus</button>
-
-                    </div>
-
-                </li>
-
-            </ul>
+            <div class="card"></div>
 
         </section>
 
-        <!-- Notes -->
-        <section class="notes card">
 
-            <h2>Catatan Hari Ini</h2>
+        <!-- Content -->
 
-            <textarea
-                id="notes"
-                placeholder="Tulis apa yang dipelajari hari ini..."
-            ></textarea>
+        <section class="content-grid">
+
+            <div class="card"></div>
+
+            <div class="card"></div>
+
+            <div class="card"></div>
+
+            <div class="card"></div>
 
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-
-        <p>
-            DevJourney V1 &copy; 2026
-        </p>
-
-    </footer>
-
-    <script src="js/app.js"></script>
+</div>
 
 </body>
 </html>
