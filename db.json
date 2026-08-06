@@ -1,0 +1,45 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Laskar Pelangi",
+      "author": "Andrea Hirata",
+      "genre": "Novel",
+      "year": 2005,
+      "stock": 7
+    },
+    {
+      "id": "2",
+      "title": "Bumi Manusia",
+      "author": "Pramoedya Ananta Toer",
+      "genre": "Sejarah",
+      "year": 1980,
+      "stock": 3
+    },
+    {
+      "id": "3",
+      "title": "Filosofi Teras",
+      "author": "Henry Manampiring",
+      "genre": "Self-improvement",
+      "year": 2018,
+      "stock": 10
+    },
+    {
+      "id": "4",
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "genre": "Self-improvement",
+      "year": 2018,
+      "stock": 5
+    },
+    {
+      "id": "5",
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "genre": "Sains",
+      "year": 2011,
+      "stock": 2
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
