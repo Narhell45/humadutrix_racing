@@ -1,5 +1,12 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
+const inputBtn = document.getElementById("taskBtn");
+
+inputBox.addEventListener("keydown", (e) => {
+    if(e.key === "Enter") {
+        addTask();   
+    }
+})
 
 function addTask(){
     if(inputBox.value === ''){
@@ -17,6 +24,8 @@ function addTask(){
     inputBox.value = "";
     saveData();
 }
+
+
 
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
