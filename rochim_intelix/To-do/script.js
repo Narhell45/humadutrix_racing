@@ -1,6 +1,7 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
-const inputBtn = document.getElementById("taskBtn");
+const countTask = document.getElementById("countTask");
+const doneTask = document.getElementById("doneTask");
 
 inputBox.addEventListener("keydown", (e) => {
     if(e.key === "Enter") {
@@ -8,32 +9,41 @@ inputBox.addEventListener("keydown", (e) => {
     }
 })
 
+let totalTask = 0;
+
 function addTask(){
-    if(inputBox.value === ''){
+    const cleanInput = inputBox.value.trim();
+    if(cleanInput === ''){
         alert("You must write something");
     }
     else{
-        let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
+        const li = document.createElement("li");
+        li.innerHTML = cleanInput;
         listContainer.appendChild(li);
-        let span = document.createElement("span");
+        const span = document.createElement("span");
         span.innerHTML = "\u00d7";
-        li.appendChild(span)
-    }
+        li.appendChild(span) 
+        totalTask++;
+        countTask.innerHTML = `Total Task: ${totalTask}`;
+    } 
 
     inputBox.value = "";
     saveData();
 }
 
-
-
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
+        const checkedTask = listContainer.querySelectorAll("li.checked").length;
+        doneTask.innerHTML = `Done Task: ${checkedTask}`;
         saveData();
     }
     else if(e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
+        totalTask--;
+        countTask.innerHTML = `Total Task: ${totalTask}`;
+        const checkedTask = listContainer.querySelectorAll("li.checked").length;
+        doneTask.innerHTML = `Done Task: ${checkedTask}`;
         saveData();
     }
 }, false);
@@ -45,6 +55,11 @@ function saveData(){
 
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
+    totalTask = listContainer.querySelectorAll("li").length;
+    countTask.innerHTML = `Total Task: ${totalTask}`;
+    const checkedTask = listContainer.querySelectorAll("li.checked").length;
+    doneTask.innerHTML = `Done Task: ${checkedTask}`;
 }
 
 showTask();
+

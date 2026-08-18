@@ -9,15 +9,19 @@
         <div class="container">
             <div class="todo-app">
                 <h2>To-Do List <img src="assets/images/icon.png"></h2>
+                <!-- script.js -->
                 <div class="row">
                     <input type="text" id="input-box" placeholder="Add your text">
-                    <button id="taskBtn" onclick="addTask()">Add</button>
+                    <button onclick="addTask()">Add</button>
+                </div>
+                <div class="counter">
+                    <h3 id="countTask"></h3>    
+                    <h3 id="doneTask"></h3>    
                 </div>
                 <ul id="list-container">
-                    <!-- <li class="checked">Task 1</li>
-                    <li>Task 2</li>
-                    <li>Task 3</li> -->
+                    
                 </ul>
+                <!-- script.js -->
             </div>
         </div>
         <script src="script.js"></script>

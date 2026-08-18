@@ -62,6 +62,12 @@ button{
     border-radius: 40px;
 }
 
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 ul li{
     list-style: none;
     font-size: 17px;
@@ -85,7 +91,7 @@ ul li::before{
 }
 
 ul li.checked{
-    color: #555;
+    color: #7a7878;
     text-decoration: line-through;
 }
 
