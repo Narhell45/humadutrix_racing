@@ -11,6 +11,10 @@ inputBox.addEventListener("keydown", (e) => {
 
 let totalTask = 0;
 
+function getDoneTaskCounter() {
+    return listContainer.querySelectorAll("li.checked").length;
+}
+
 function addTask(){
     const cleanInput = inputBox.value.trim();
     if(cleanInput === ''){
@@ -31,19 +35,32 @@ function addTask(){
     saveData();
 }
 
+function clearCompleted(){
+
+    const completedTask = listContainer.querySelectorAll("li.checked");
+
+    completedTask.forEach(function(task){
+        task.remove()
+    })
+
+    totalTask = listContainer.querySelectorAll("li").length;
+    countTask.innerHTML = `Total Task: ${totalTask}`;
+    doneTask.innerHTML = `Done Task: ${getDoneTaskCounter()}`;
+
+    saveData();
+}
+
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
-        const checkedTask = listContainer.querySelectorAll("li.checked").length;
-        doneTask.innerHTML = `Done Task: ${checkedTask}`;
+        doneTask.innerHTML = `Done Task: ${getDoneTaskCounter()}`;
         saveData();
     }
     else if(e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
         totalTask--;
         countTask.innerHTML = `Total Task: ${totalTask}`;
-        const checkedTask = listContainer.querySelectorAll("li.checked").length;
-        doneTask.innerHTML = `Done Task: ${checkedTask}`;
+        doneTask.innerHTML = `Done Task: ${getDoneTaskCounter()}`;
         saveData();
     }
 }, false);
@@ -57,8 +74,7 @@ function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
     totalTask = listContainer.querySelectorAll("li").length;
     countTask.innerHTML = `Total Task: ${totalTask}`;
-    const checkedTask = listContainer.querySelectorAll("li.checked").length;
-    doneTask.innerHTML = `Done Task: ${checkedTask}`;
+    doneTask.innerHTML = `Done Task: ${getDoneTaskCounter()}`;
 }
 
 showTask();
