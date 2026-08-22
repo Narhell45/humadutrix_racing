@@ -62,9 +62,22 @@ button{
     border-radius: 40px;
 }
 
-.clearBtn{
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.clearTools{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 20px;
+}
+
+.clearBtn {
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -72,13 +85,22 @@ button{
     color: #fff;
     font-size: 15px;
     cursor: pointer;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.clearAll{
+    border: none;
+    outline: none;
+    padding: 0px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
     border-radius: 0px 20px 20px 0px;
 }
 
-.counter{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.clearTools button img{
+    width: 50px;
 }
 
 ul li{
