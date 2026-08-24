@@ -2,6 +2,7 @@ const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 const countTask = document.getElementById("countTask");
 const doneTask = document.getElementById("doneTask");
+const icon = document.getElementById("mode");
 
 inputBox.addEventListener("keydown", (e) => {
     if(e.key === "Enter") {
@@ -85,6 +86,28 @@ function saveData(){
 
 }
 
+function saveTheme(){
+    localStorage.setItem("Theme", document.body.classList.contains("dark-theme"));
+}
+
+function updateThemeIcon(){
+    if(document.body.classList.contains("dark-theme")){
+        icon.src = "assets/dark_mode/sun.png";
+    } else {
+        icon.src = "assets/dark_mode/moon.png";
+    }
+}
+
+function showTheme(){
+    if (localStorage.getItem("Theme") === "true"){
+        document.body.classList.add("dark-theme");
+    } else {
+        document.body.classList.remove("dark-theme");
+    }
+
+    updateThemeIcon();
+}
+
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
     totalTask = listContainer.querySelectorAll("li").length;
@@ -92,5 +115,14 @@ function showTask(){
     doneTask.innerHTML = `Done Task: ${getDoneTaskCounter()}`;
 }
 
-showTask();
+icon.onclick = function() {
+    document.body.classList.toggle("dark-theme");
+    
+    updateThemeIcon();
 
+    saveTheme();
+
+}
+
+showTask();
+showTheme();
