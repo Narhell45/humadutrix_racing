@@ -50,6 +50,21 @@ function clearCompleted(){
     saveData();
 }
 
+function clearAll(){
+
+    const clearTask = listContainer.querySelectorAll("li");
+
+    clearTask.forEach(function(clear){
+        clear.remove()
+    })
+
+    totalTask = listContainer.querySelectorAll("li").length;
+    countTask.innerHTML = `Total Task: ${totalTask}`;
+    doneTask.innerHTML = `Done Task: ${getDoneTaskCounter()}`;
+
+    saveData();
+}
+
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
