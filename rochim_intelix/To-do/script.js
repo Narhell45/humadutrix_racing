@@ -23,11 +23,19 @@ function addTask(){
     }
     else{
         const li = document.createElement("li");
-        li.innerHTML = cleanInput;
-        listContainer.appendChild(li);
+        const textTask = document.createElement("span");
+        textTask.innerHTML = cleanInput;
+        textTask.classList.add("task-text");
+        li.appendChild(textTask);
+        const edit = document.createElement("span");
+        edit.innerHTML = "✏️";
+        edit.classList.add("edit-btn");
+        li.appendChild(edit)
         const span = document.createElement("span");
         span.innerHTML = "\u00d7";
+        span.classList.add("delete-btn");
         li.appendChild(span) 
+        listContainer.appendChild(li);
         totalTask++;
         countTask.innerHTML = `Total Task: ${totalTask}`;
     } 
@@ -72,7 +80,23 @@ listContainer.addEventListener("click", function(e){
         doneTask.innerHTML = `Done Task: ${getDoneTaskCounter()}`;
         saveData();
     }
-    else if(e.target.tagName === "SPAN"){
+    else if(e.target.classList.contains("edit-btn")){
+        const task = e.target.parentElement;
+        const text = task.querySelector(".task-text");
+        const oldText = text.innerHTML;
+        const newText = prompt(oldText);
+
+        if(newText !== null){
+        const cleanText = newText.trim();
+
+        if(cleanText !== ''){
+                text.innerHTML = cleanText;
+                saveData();
+            }
+        }
+        
+    }
+    else if(e.target.classList.contains("delete-btn")){
         e.target.parentElement.remove();
         totalTask--;
         countTask.innerHTML = `Total Task: ${totalTask}`;

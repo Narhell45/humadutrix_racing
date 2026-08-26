@@ -213,9 +213,9 @@ ul li.checked::before {
     background-image: url(../assets/images/checked.png);
 }
 
-ul li span {
+ul li .edit-btn,
+ul li .delete-btn {
     position: absolute;
-    right: 0;
     top: 5px;
     width: 45px;
     height: 45px;
@@ -226,6 +226,15 @@ ul li span {
     border-radius: 50%;
 }
 
-ul li span:hover {
+ul li .edit-btn:hover,
+ul li .delete-btn:hover {
     background: #edeef0;
+}
+
+.delete-btn {
+    right: 0;
+}
+
+.edit-btn {
+    right: 45px;
 }
