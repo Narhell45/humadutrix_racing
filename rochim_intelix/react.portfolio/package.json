@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
+    "animate.css": "^4.1.1",
+    "aos": "^3.0.0-beta.6",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "remixicon": "^4.9.1",
